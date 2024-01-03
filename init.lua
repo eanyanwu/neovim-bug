@@ -1,3 +1,5 @@
--- I expect this require to execute the top-level code in createbuf.lua,
--- including the coe that sets options
-require("createbuf")
+local gb = vim.api.nvim_create_buf(false, false)
+vim.api.nvim_buf_set_option(gb, "buftype", "nofile")
+vim.api.nvim_buf_set_option(gb, "filetype", "alist")
+vim.api.nvim_buf_set_option(gb, "modeline", false)
+print(gb)
